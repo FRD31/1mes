@@ -1,0 +1,77 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Fondo negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor con márgenes luminosos */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.glowing-border {
+    border: 5px solid #fff; /* Color inicial del borde */
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; /* Efecto de brillo */
+    animation: glowing 2s infinite alternate;
+    width: 90%; /* Responsivo */
+    max-width: 600px;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+        border-color: #ff00ff;
+    }
+    100% {
+        box-shadow: 0 0 20px #ff0099, 0 0 40px #ff0099, 0 0 60px #ff0099;
+        border-color: #ff0099;
+    }
+}
+
+/* Mensaje de bienvenida */
+.welcome-message {
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Botón en forma de imagen */
+.button-image {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.button-image:hover {
+    transform: scale(1.1);
+}
+
+/* Responsivo para teléfonos */
+@media (max-width: 600px) {
+    .welcome-message {
+        font-size: 18px;
+    }
+
+    .button-image {
+        width: 120px;
+    }
+}

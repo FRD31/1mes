@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Alternativa</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .gallery-container {
+            margin: 20px;
+            padding: 20px;
+            border: 5px solid transparent;
+            border-image: linear-gradient(45deg, rgba(128, 0, 128, 0.6), rgba(255, 165, 0, 0.6)) 1;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            animation: glowing 1.5s infinite alternate;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 165, 0, 1);
+            }
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+        }
+
+        .custom-button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+
+        .custom-button:hover {
+            background-color: #3700b3;
+            transform: scale(1.05);
+        }
+
+        .custom-button:active {
+            transform: scale(0.95);
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="gallery-container">
+        <img src="Amyk.jpg" alt="Imagen 1">
+        <img src="Amykitt.jpg" alt="Imagen 2">
+        <img src="amyki.jpg" alt="Imagen 3">
+        <img src="Amy-kitty.jpg" alt="Imagen 4">
+        <img src="kitty-Amy.jpg" alt="Imagen 5">
+        <img src="kittiAmy.jpg" alt="Imagen 6">
+        <!-- Añade más imágenes según lo que necesites -->
+    </div>
+
+    <div class="buttons-container">
+        <button class="custom-button" onclick="location.href='gale.html'">Regresar</button>
+        <button class="custom-button" onclick="location.href='conejito.html'">Siguiente</button>
+    </div>
+
+</body>
+</html>

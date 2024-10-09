@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Conejo y sus Zanahorias</title>
+    <style>
+        /* General */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            border: 5px solid transparent;
+            border-image: linear-gradient(45deg, rgba(128, 0, 128, 0.7), rgba(255, 0, 255, 0.7)) 1;
+            animation: borderGlow 2s infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            0% {
+                box-shadow: 0 0 15px rgba(128, 0, 128, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(255, 0, 255, 0.9);
+            }
+        }
+
+        /* Rabbit Animation */
+        .rabbit {
+            position: relative;
+            width: 120px;
+            height: 150px;
+            background: linear-gradient(45deg, rgba(128, 0, 128, 0.3), rgba(255, 0, 255, 0.5));
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 10px rgba(148, 0, 211, 0.6);
+            animation: bounce 2s infinite alternate;
+        }
+
+        .rabbit .ear {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(45deg, rgba(128, 0, 128, 0.7), rgba(255, 0, 255, 0.9));
+            border-radius: 50% 50% 0 0;
+            top: -30px;
+            box-shadow: 0 0 10px rgba(128, 0, 128, 0.6);
+        }
+
+        .rabbit .ear.left {
+            left: 10px;
+            transform: rotate(-20deg);
+        }
+
+        .rabbit .ear.right {
+            right: 10px;
+            transform: rotate(20deg);
+        }
+
+        .rabbit .eye {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            top: 40px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .rabbit .eye.left {
+            left: 35px;
+        }
+
+        .rabbit .eye.right {
+            right: 35px;
+        }
+
+        .rabbit .nose {
+            position: absolute;
+            top: 65px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: pink;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Bubble */
+        .speech-bubble {
+            position: absolute;
+            top: -30px;
+            left: 100px;
+            width: 200px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+            font-size: 14px;
+        }
+
+        /* Carrot Snow */
+        .carrot {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(45deg);
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -20px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0.2;
+            }
+        }
+
+        /* Button Container */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .custom-button {
+            background-color: rgba(128, 0, 128, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 0 10px rgba(128, 0, 128, 0.6);
+        }
+
+        .custom-button:hover {
+            background-color: rgba(255, 0, 255, 0.8);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .rabbit {
+                width: 80px;
+                height: 100px;
+            }
+            .rabbit .ear {
+                width: 20px;
+                height: 40px;
+            }
+            .rabbit .eye {
+                width: 10px;
+                height: 10px;
+            }
+            .speech-bubble {
+                width: 140px;
+                font-size: 12px;
+            }
+            .custom-button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rabbit">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+        <div class="speech-bubble">Hola Amy, soy un conejito, Diego te manda esto: Eres mi impulso constante, la razón detrás de cada sonrisa, y el motivo por el cual quiero dar siempre lo mejor de mí. Te amo más de lo que mis palabras pueden expresar</div>
+    </div>
+
+    <!-- Carrot Elements -->
+    <div class="carrot" style="left: 10%; animation-duration: 6s;"></div>
+    <div class="carrot" style="left: 30%; animation-duration: 4s; animation-delay: 2s;"></div>
+    <div class="carrot" style="left: 50%; animation-duration: 5s; animation-delay: 1s;"></div>
+    <div class="carrot" style="left: 70%; animation-duration: 7s; animation-delay: 3s;"></div>
+    <div class="carrot" style="left: 90%; animation-duration: 3s; animation-delay: 4s;"></div>
+
+    <!-- Button Container -->
+    <div class="button-container">
+        <button class="custom-button" onclick="location.href='final.html'">Suiente</button>
+        <button class="custom-button" onclick="location.href='gale2.html'">Regresar</button>
+    </div>
+</body>
+</html>
